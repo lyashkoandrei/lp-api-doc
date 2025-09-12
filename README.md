@@ -163,6 +163,49 @@ const data = await response.json();
 console.log(data);
 ```
 
+### PHP
+```php
+<?php
+$token = "<JWT_TOKEN>";
+$url = "https://landportal.com/wp-json/lp-rest-api/v1/skip-trace";
+
+$data = [
+    "method" => "create",
+    "json_data" => [
+        [
+            "last_name" => "Smith",
+            "first_name" => "John",
+            "mailing_address" => "123 Main St",
+            "mailing_city" => "New York",
+            "mailing_state" => "NY",
+            "mailing_zip" => "10001",
+            "property_address" => "456 Oak Ave",
+            "property_city" => "Brooklyn",
+            "property_state" => "NY",
+            "property_zip" => "11201"
+        ]
+    ],
+    "emails_trace" => false
+];
+
+$options = [
+    "http" => [
+        "header" => "Content-Type: application/json\r\nAuthorization: Bearer $token\r\n",
+        "method" => "POST",
+        "content" => json_encode($data)
+    ]
+];
+
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+
+if ($result === FALSE) {
+    die("Error while calling API");
+}
+
+echo $result;
+```
+
 ---
 
 ## 2. Get Task Status
