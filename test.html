@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Land Portal API Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Test Page</h1>
+            <p>Testing external CSS and JS files</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'test-tab')">Test Tab</button>
+            <button class="tab-button disabled">Disabled Tab</button>
+        </div>
+        
+        <div id="test-tab" class="tab-content active">
+            <div class="api-section">
+                <h2>Test API</h2>
+                <p>This is a test page to verify that external CSS and JS files are working correctly.</p>
+                
+                <div class="code-block">
+<pre><code class="language-javascript">console.log("Hello, World!");</code></pre>
+                </div>
+                
+                <div class="json-example">
+<pre><code class="language-json">{
+  "success": true,
+  "message": "Test successful"
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

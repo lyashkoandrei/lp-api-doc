@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Disabled Tabs - Land Portal API Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Test Disabled Tabs</h1>
+            <p>Testing disabled tab functionality</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'active-tab')">Active Tab</button>
+            <button class="tab-button disabled">Disabled Tab 1</button>
+            <button class="tab-button disabled">Disabled Tab 2</button>
+        </div>
+        
+        <div id="active-tab" class="tab-content active">
+            <div class="api-section">
+                <h2>Active Tab Content</h2>
+                <p>This tab is active and clickable.</p>
+                <p>Try clicking on the disabled tabs - they should not respond to clicks.</p>
+                
+                <div class="info">
+                    <strong>Test Instructions:</strong>
+                    <ul>
+                        <li>Click on "Active Tab" - should work normally</li>
+                        <li>Click on "Disabled Tab 1" - should not respond</li>
+                        <li>Click on "Disabled Tab 2" - should not respond</li>
+                        <li>Disabled tabs should have grayed out appearance</li>
+                        <li>Disabled tabs should show "not-allowed" cursor on hover</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
