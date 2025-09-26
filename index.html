@@ -101,7 +101,8 @@
     "property_state": "property_state",
     "property_zip": "property_zip"
   },
-  "emails_trace": false
+  "emails_trace": false,
+  "test_mode": "true"
 }</code></pre>
                 </div>
 
@@ -123,7 +124,8 @@
       "property_zip": "11201"
     }
   ],
-  "emails_trace": false
+  "emails_trace": false,
+  "test_mode": "true"
 }</code></pre>
                 </div>
 
@@ -141,6 +143,21 @@
 }</code></pre>
                 </div>
 
+                <h4>Test Mode Parameter</h4>
+                <div class="info">
+                    <strong>test_mode:</strong> Optional parameter that can be set to <code>"true"</code> for testing purposes.
+                </div>
+                
+                <div class="warning">
+                    <strong>Test Mode Behavior:</strong>
+                    <ul>
+                        <li><strong>Fake Data:</strong> When <code>test_mode: "true"</code> is set, the output file will be populated with fake/sample data instead of real skip trace results</li>
+                        <li><strong>No Token Usage:</strong> Tokens are not consumed when running in test mode, allowing you to test the API without affecting your token balance</li>
+                        <li><strong>Development Testing:</strong> Perfect for testing your integration, data processing logic, and API responses without using real data or tokens</li>
+                        <li><strong>Response Format:</strong> The response structure remains the same, but the actual data in the output file will be sample data</li>
+                    </ul>
+                </div>
+
                 <h4 id="examples">Examples</h4>
                 
                 <h5>cURL</h5>
@@ -150,7 +167,8 @@
   -H "Content-Type: application/json" \
   -d '{
     "method": "create",
-    "json_data": [{"last_name":"Smith","first_name":"John"}]
+    "json_data": [{"last_name":"Smith","first_name":"John"}],
+    "test_mode": "true"
   }'</code></pre>
                 </div>
 
@@ -162,7 +180,8 @@ url = "https://landportal.com/wp-json/lp-rest-api/v1/skip-trace"
 headers = {"Authorization": "Bearer &lt;JWT_TOKEN&gt;"}
 payload = {
     "method": "create",
-    "json_data": [{"last_name": "Smith", "first_name": "John"}]
+    "json_data": [{"last_name": "Smith", "first_name": "John"}],
+    "test_mode": "true"
 }
 
 response = requests.post(url, json=payload, headers=headers)
@@ -179,7 +198,8 @@ print(response.json())</code></pre>
   },
   body: JSON.stringify({
     method: "create",
-    json_data: [{ last_name: "Smith", first_name: "John" }]
+    json_data: [{ last_name: "Smith", first_name: "John" }],
+    test_mode: "true"
   })
 });
 
